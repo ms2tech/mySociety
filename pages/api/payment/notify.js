@@ -6,7 +6,7 @@ export default function handler(req, res) {
   // Extract query parameters from the request
   const queryParams = req.query;
 
-
+  console.log('WE ARE IN NOTIFY URL')
   console.log('QUERY > PARAMS', queryParams)
 
   // Return query parameters along with a message
