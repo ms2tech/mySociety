@@ -26,11 +26,11 @@ export default function ResetPassword() {
         
         if (isMobile) {
           // Try opening the app using the deep link
-          window.location.href = "mysociety://login";
+          window.location.href = "com.ilay.mysociety://login";
       
           // Fallback to App Store or Play Store after 3 seconds if the app isn't installed
           setTimeout(() => {
-            window.location.href = "mysociety://"; // Your app's download page
+            window.location.href = "mysociety://login"; // Your app's download page
           }, 3000);
         } else {
           // Fallback to web login for desktop users
