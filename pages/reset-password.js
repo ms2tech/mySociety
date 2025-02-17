@@ -27,18 +27,19 @@ export default function ResetPassword() {
         const isMobile = /android|iphone|ipad/i.test(navigator.userAgent);
       
         if (isMobile) {
-          // Use the Expo development URL when testing in Expo Go
-          window.location.href = "exp://exp.host/@your-username/your-app-name/login";
+          // Use the Expo Go deep link
+          window.location.href = "exp://exp.host/@ms2techllc/my-society/login";
       
-          // Fallback if the app isn't installed
+          // Fallback: If the app isn't installed, try standalone deep link
           setTimeout(() => {
-            window.location.href = "mysociety://login"; // Change to App Store or Play Store
+            window.location.href = "mysociety://login"; // Works for standalone apps only
           }, 3000);
         } else {
-          // Web fallback
+          // Fallback to web login for desktop users
           router.push("/login");
         }
       }, 1000);
+      
       
       
     } catch (err) {
