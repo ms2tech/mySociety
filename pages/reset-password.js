@@ -21,7 +21,7 @@ export default function ResetPassword() {
     try {
       await account.updateRecovery(userId, secret, password);
       setSuccess("Password successfully reset! Redirecting...");
-      setTimeout(() => router.push("/login"), 3000);
+      setTimeout(() => router.push("mysociety://login"), 3000);
     } catch (err) {
       setError(err.message);
     }
