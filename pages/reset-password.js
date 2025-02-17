@@ -23,20 +23,21 @@ export default function ResetPassword() {
       setSuccess("Password successfully reset! Redirecting...");
       setTimeout(() => {
         const isMobile = /android|iphone|ipad/i.test(navigator.userAgent);
-        
-        if (isMobile) {
-          // Try opening the app using the deep link
-          window.location.href = "com.ilay.mysociety://login";
       
-          // Fallback to App Store or Play Store after 3 seconds if the app isn't installed
+        if (isMobile) {
+          // Use the Expo development URL when testing in Expo Go
+          window.location.href = "exp://exp.host/@your-username/your-app-name/login";
+      
+          // Fallback if the app isn't installed
           setTimeout(() => {
-            window.location.href = "mysociety://login"; // Your app's download page
+            window.location.href = "https://mysociety.com/download"; // Change to App Store or Play Store
           }, 3000);
         } else {
-          // Fallback to web login for desktop users
+          // Web fallback
           router.push("/login");
         }
-      }, 3000);
+      }, 1000);
+      
       
     } catch (err) {
       setError(err.message);
