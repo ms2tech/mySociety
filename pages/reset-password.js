@@ -12,6 +12,8 @@ export default function ResetPassword() {
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
+    setError('')
+    setSuccess('')
 
     if (password !== confirmPassword) {
       setError("Passwords do not match");
@@ -30,7 +32,7 @@ export default function ResetPassword() {
       
           // Fallback if the app isn't installed
           setTimeout(() => {
-            window.location.href = "https://mysociety.com/download"; // Change to App Store or Play Store
+            window.location.href = "mysociety://login"; // Change to App Store or Play Store
           }, 3000);
         } else {
           // Web fallback
