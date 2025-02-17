@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-// import { account } from "../lib/appwrite";
+import { account } from "../lib/appwrite";
 
 export default function ResetPassword() {
   const router = useRouter();
