@@ -28,11 +28,11 @@ export default function ResetPassword() {
       
         if (isMobile) {
           // Use the Expo Go deep link
-          window.location.href = "exp://exp.host/@ms2techllc/my-society/login";
+          window.location.href = "exp://exp.host/@ms2techllc/community-app/login";
       
           // Fallback: If the app isn't installed, try standalone deep link
           setTimeout(() => {
-            window.location.href = "mysociety://login"; // Works for standalone apps only
+            window.location.href = "community://login"; // Works for standalone apps only
           }, 3000);
         } else {
           // Fallback to web login for desktop users
