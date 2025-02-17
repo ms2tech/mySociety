@@ -22,8 +22,22 @@ export default function ResetPassword() {
       await account.updateRecovery(userId, secret, password);
       setSuccess("Password successfully reset! Redirecting...");
       setTimeout(() => {
-        window.open("mysociety://login", "_self");
-      }, 3000)
+        const isMobile = /android|iphone|ipad/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+          // Try opening the app using the deep link
+          window.location.href = "mysociety://login";
+      
+          // Fallback to App Store or Play Store after 3 seconds if the app isn't installed
+          setTimeout(() => {
+            window.location.href = "https://mysociety.com/download"; // Your app's download page
+          }, 3000);
+        } else {
+          // Fallback to web login for desktop users
+          router.push("/login");
+        }
+      }, 3000);
+      
     } catch (err) {
       setError(err.message);
     }
