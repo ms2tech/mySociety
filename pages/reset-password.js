@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { account } from "../lib/appwrite";
 
@@ -21,45 +21,27 @@ export default function ResetPassword() {
     try {
       await account.updateRecovery(userId, secret, password);
       setSuccess("Password successfully reset! Redirecting...");
-      // ✅ Redirect to mobile app using deep link
       setTimeout(() => {
-        window.location.href = "mysociety://login"; // Your custom deep link
+        window.location.href = "mysociety://login";
       }, 3000);
     } catch (err) {
       setError(err.message);
     }
   };
 
-
-// const handleReset = async (e) => {
-//     e.preventDefault();
-  
-//     try {
-//       await account.updateRecovery(userId, secret, password);
-//       setMessage("Password reset successful! Redirecting to the app...");
-  
-//       // ✅ Redirect to mobile app using deep link
-//       setTimeout(() => {
-//         window.location.href = "myapp://reset-success"; // Your custom deep link
-//       }, 3000);
-//     } catch (err) {
-//       setMessage(`Error: ${err.message}`);
-//     }
-//   };
-  
-
   return (
-    <div>
-      <h2>Reset Your Password</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
-      <form onSubmit={handleResetPassword}>
+    <div style={styles.container}>
+      <h2 style={styles.heading}>Reset Your Password</h2>
+      {error && <p style={styles.error}>{error}</p>}
+      {success && <p style={styles.success}>{success}</p>}
+      <form onSubmit={handleResetPassword} style={styles.form}>
         <input
           type="password"
           placeholder="New Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          style={styles.input}
         />
         <input
           type="password"
@@ -67,9 +49,66 @@ export default function ResetPassword() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+          style={styles.input}
         />
-        <button type="submit">Reset Password</button>
+        <button type="submit" style={styles.button}>Reset Password</button>
       </form>
     </div>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    padding: "20px",
+    backgroundColor: "#f8f9fa",
+  },
+  heading: {
+    fontSize: "1.5rem",
+    color: "#333",
+    marginBottom: "20px",
+    textAlign: "center",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    maxWidth: "320px",
+    gap: "10px",
+  },
+  input: {
+    width: "100%",
+    padding: "12px",
+    fontSize: "16px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    outline: "none",
+  },
+  button: {
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    padding: "12px",
+    fontSize: "16px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    transition: "background 0.3s",
+  },
+  buttonHover: {
+    backgroundColor: "#0056b3",
+  },
+  error: {
+    color: "red",
+    fontSize: "14px",
+    marginBottom: "10px",
+  },
+  success: {
+    color: "green",
+    fontSize: "14px",
+    marginBottom: "10px",
+  },
+};
