@@ -21,11 +21,32 @@ export default function ResetPassword() {
     try {
       await account.updateRecovery(userId, secret, password);
       setSuccess("Password successfully reset! Redirecting...");
-      setTimeout(() => router.push("mysociety://login"), 3000);
+      // ✅ Redirect to mobile app using deep link
+      setTimeout(() => {
+        window.location.href = "mysociety://login"; // Your custom deep link
+      }, 3000);
     } catch (err) {
       setError(err.message);
     }
   };
+
+
+// const handleReset = async (e) => {
+//     e.preventDefault();
+  
+//     try {
+//       await account.updateRecovery(userId, secret, password);
+//       setMessage("Password reset successful! Redirecting to the app...");
+  
+//       // ✅ Redirect to mobile app using deep link
+//       setTimeout(() => {
+//         window.location.href = "myapp://reset-success"; // Your custom deep link
+//       }, 3000);
+//     } catch (err) {
+//       setMessage(`Error: ${err.message}`);
+//     }
+//   };
+  
 
   return (
     <div>
