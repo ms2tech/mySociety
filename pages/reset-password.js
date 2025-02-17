@@ -30,7 +30,7 @@ export default function ResetPassword() {
       
           // Fallback to App Store or Play Store after 3 seconds if the app isn't installed
           setTimeout(() => {
-            window.location.href = "https://mysociety.com/download"; // Your app's download page
+            window.location.href = "mysociety://"; // Your app's download page
           }, 3000);
         } else {
           // Fallback to web login for desktop users
