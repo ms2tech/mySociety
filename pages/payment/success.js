@@ -23,7 +23,7 @@ export default function PaymentSuccess() {
       <Lottie animationData={successAnimation} loop={false} className="success-animation" />
 
       <h1 className="title">Payment Successful!</h1>
-      <p className="message">Thank you for your payment. Your transaction has been completed.</p>
+      {/* <p className="message">Thank you for your payment. Your transaction has been completed.</p> */}
 
       {/* ✅ Auto Redirect Message */}
       {/* <p className="redirect-text">Redirecting you in 5 seconds...</p> */}
