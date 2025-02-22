@@ -20,9 +20,10 @@ export default function PaymentSuccess() {
   return (
     <div className="container">
       {/* ✅ Animated Success Icon */}
+      <h1 className="title">Payment Successful!</h1>
       <Lottie animationData={successAnimation} loop={false} className="success-animation" />
 
-      <h1 className="title">Payment Successful!</h1>
+      
       {/* <p className="message">Thank you for your payment. Your transaction has been completed.</p> */}
 
       {/* ✅ Auto Redirect Message */}

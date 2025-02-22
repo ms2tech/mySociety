@@ -19,9 +19,10 @@ export default function PaymentFailed() {
   return (
     <div className="container">
       {/* ❌ Animated Failure Icon */}
+      <h1 className="title">Payment Failed</h1>
+
       <Lottie animationData={failedAnimation} loop={false} className="failed-animation" />
 
-      <h1 className="title">Payment Failed</h1>
       {/* <p className="message">Unfortunately, your payment was not processed. Please try again.</p> */}
 
       {/* 🔄 Auto Redirect Message
