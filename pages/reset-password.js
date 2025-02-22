@@ -22,7 +22,7 @@ export default function ResetPassword() {
 
     try {
       await account.updateRecovery(userId, secret, password);
-      setSuccess("Password successfully reset! Redirecting...");
+      setSuccess("Password successfully reset! You can now login...");
       setTimeout(() => {
         const isMobile = /android|iphone|ipad/i.test(navigator.userAgent);
       
