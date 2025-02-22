@@ -32,7 +32,7 @@ export default function ResetPassword() {
       
           // Fallback: If the app isn't installed, try standalone deep link
           setTimeout(() => {
-            window.location.href = "community://login"; // Works for standalone apps only
+            window.location.href = "community://app/index"; // Works for standalone apps only
           }, 3000);
         } else {
           // Fallback to web login for desktop users
@@ -45,6 +45,11 @@ export default function ResetPassword() {
     } catch (err) {
       setError(err.message);
     }
+  };
+
+
+  const openMobileApp = () => {
+    window.location.href = "community://app/index"; // ✅ Opens the mobile app
   };
 
   return (
