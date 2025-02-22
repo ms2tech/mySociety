@@ -1,0 +1,60 @@
+/* 🌟 Container Styling */
+.container {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    background: #f7f9fc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* ✅ Animated Success Icon */
+  .success-animation {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  
+  /* 🎉 Title */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 10px;
+  }
+  
+  /* ℹ️ Success Message */
+  .message {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  /* ⏳ Redirect Text */
+  .redirect-text {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* 🏠 Home Button */
+  .home-button {
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .home-button:hover {
+    background: #0056b3;
+  }
+  

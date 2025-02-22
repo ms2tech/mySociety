@@ -1,0 +1,53 @@
+/* 🌟 Container Styling */
+.container {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    background: #fef9c3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* ⏳ Animated Processing Icon */
+  .processing-animation {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  
+  /* 🏷️ Title */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b45309;
+    margin-bottom: 10px;
+  }
+  
+  /* ℹ️ Status Message */
+  .message {
+    font-size: 16px;
+    color: #92400e;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  /* 🔄 Refresh Button */
+  .refresh-button {
+    background: #d97706;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .refresh-button:hover {
+    background: #b45309;
+  }
+  
